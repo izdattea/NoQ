@@ -18,7 +18,6 @@
                                         <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Restaurant</th>
                                         <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
                                         <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Phone Number</th>
-                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Location</th>
                                         <th scope="col" class="px-6 py-3 text-centre text-xs font-medium text-gray-500 uppercase tracking-wider">Action</th>
                                     </tr>
                                 </thead>
@@ -29,15 +28,13 @@
                                             <td class="px-6 py-4 whitespace-normal text-sm font-medium text-gray-500">{{$user['name']}}</td>
                                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{$user['email']}}</td>
                                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-500">{{$user['phone_number']}}</td>
-                                            <td class="px-6 py-4 whitespace-normal text-sm font-medium text-gray-500">{{$user['location']}}, {{$user['postcode']}}, {{$user['city']}}, {{$user['state']}}</td>
-                                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                                <a href="/accept/{{$user->id}}" class="bg-green-500 hover:bg-green-700 text-white font-bold text-sm font-medium py-2 px-4 rounded-full">Accept</a>
-                                                <a href="/delete/{{$user->id}}" class="bg-red-500 hover:bg-red-700 text-white font-bold text-sm font-medium py-2 px-4  rounded-full">Decline</a>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-center">
+                                                <a href="/accept/{{$user->id}}" class="bg-green-500 hover:bg-green-700 text-white items-center font-bold text-sm py-2 px-4 rounded-full">Accept</a>
+                                                <a href="/delete/{{$user->id}}" class="bg-red-500 hover:bg-red-700 text-white items-center font-bold text-sm py-2 px-4 rounded-full">Decline</a>
                                             </td>
                                         </tr>
                                         @endif
                                     @endforeach
-                                <!-- More people... -->
                                 </tbody>
                             </table>
                         </div>

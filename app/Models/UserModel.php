@@ -9,4 +9,6 @@ class UserModel extends Model
 {
     use HasFactory;
     public $table = "users";
+    protected $fillable = ['qr'];
+    public $timestamps = false;
 }

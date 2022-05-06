@@ -10,7 +10,7 @@
             @csrf
 
             <div>
-                <x-jet-label for="name" value="{{ __('Restaurant Name') }}" />
+                <x-jet-label for="name" value="{{ __('Name') }}" />
                 <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
             </div>
 
@@ -22,45 +22,6 @@
             <div class="mt-4">
                 <x-jet-label for="phone_number" value="{{ __('Phone Number') }}" />
                 <x-jet-input id="phone_number" class="block mt-1 w-full" type="text" name="phone_number" :value="old('phone_number')" required />
-            </div>
-
-            <div class="mt-4">
-                <x-jet-label for="location" value="{{ __('Location') }}" />
-                <x-jet-input id="location" class="block mt-1 w-full" type="text" name="location" :value="old('location')" required />
-            </div>
-
-            <div class="mt-4">
-                <x-jet-label for="postcode" value="{{ __('Postcode') }}" />
-                <x-jet-input id="postcode" class="block mt-1 w-full" type="text" name="postcode" :value="old('postcode')" required />
-            </div>
-
-            <div class="mt-4">
-                <x-jet-label for="city" value="{{ __('City') }}" />
-                <x-jet-input id="city" class="block mt-1 w-full" type="text" name="city" :value="old('city')" required />
-            </div>
-
-            <div class="mt-4">
-                <x-jet-label for="state" value="{{ __('State') }}" />
-                {{-- <x-jet-input id="state" class="block mt-1 w-full" type="text" name="state" :value="old('state')" required /> --}}
-                <select name="state" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
-                    <option value="">State</option>
-                    <option value="Johor">Johor</option>
-                    <option value="Kedah">Kedah</option>
-                    <option value="Kelantan">Kelantan</option>
-                    <option value="Kuala Lumpur">Kuala Lumpur</option>
-                    <option value="Labuan">Labuan</option>
-                    <option value="Melaka">Melaka</option>
-                    <option value="Negeri Sembilan">Negeri Sembilan</option>
-                    <option value="Pahang">Pahang</option>
-                    <option value="Penang">Penang</option>
-                    <option value="Perak">Perak</option>
-                    <option value="Perlis">Perlis</option>
-                    <option value="Putrajaya">Putrajaya</option>
-                    <option value="Sabah">Sabah</option>
-                    <option value="Sarawak">Sarawak</option>
-                    <option value="Selangor">Selangor</option>
-                    <option value="Terengganu">Terengganu</option>
-                </select>
             </div>
 
             <div class="mt-4">

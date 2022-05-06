@@ -16,30 +16,30 @@
                         <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                             {{ __('Dashboard') }}
                         </x-jet-nav-link>
+                    </div>
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                         <x-jet-nav-link href="{{ route('pending') }}" :active="request()->routeIs('pending')">
                             {{ __('Pending List') }}
                         </x-jet-nav-link>
+                    </div>
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                         <x-jet-nav-link href="{{ route('users') }}" :active="request()->routeIs('users')">
-                            {{ __('Restaurant List') }}
+                            {{ __('Users List') }}
                         </x-jet-nav-link>
                     </div>
-                @elseif (Auth::user()->usertype == 0)
+                @elseif (Auth::user()->usertype == "0")
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                         <x-jet-nav-link href="{{ route('profile') }}" :active="request()->routeIs('profile')">
                             {{ __('Profile') }}
                         </x-jet-nav-link>
-                        <x-jet-nav-link href="{{ route('worker') }}" :active="request()->routeIs('worker')">
-                            {{ __('Worker') }}
-                        </x-jet-nav-link>
                     </div>
-                @else {{-- usertype 1 // unverified --}}
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                        <x-jet-nav-link href="{{ route('message') }}" :active="request()->routeIs('message')">
-                            {{ __('Message') }}
+                        <x-jet-nav-link href="/worker" :active="request()->routeIs('worker')">
+                            {{ __('Worker Page') }}
                         </x-jet-nav-link>
                     </div>
+                @else
                 @endif
-
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">

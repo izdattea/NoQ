@@ -10,123 +10,173 @@
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg"> {{-- shaddow --}}
                 <div class="p-8 sm:px-20 bg-white border-b border-gray-200">
                     <div class="text-2xl text-center">
-                        Welcome, {{Auth::user()->name}}.
+                        Welcome, {{ Auth::user()->name }}.
+                        {{-- have to change to user()->name but get the user() from controller; have to add for thingy --}}
                     </div>
-                    {{-- <div class ="m-4 p-4 grid bg-gray-100 grid-flow-col gap-4 auto-cols-fr sm:rounded-lg"> --}}
-                        <!-- Page content -->
-                        <div class="bg-secondary shadow sm:rounded-lg">
-                            <div class="bg-gray-50 sm:rounded-lg">
-                                <div class = "col-span-1 p-4 ">
-                                    <div class="text-gray-800 text-lg text-left px-2">
-                                        My Account <a href="/update" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded-full ">Update</a>
-                                    </div>
-
-                                </div>
-                                <div class = "col-span-1 p-4 bg-gray-100">
-                                    <div class="text-gray-400 text-left">
-                                        User Information
-                                    </div>
-                                    <div class="flex bg-gray-100">
-                                        <div class="flex-1 text-gray-700 bg-gray-100 px-4 py-2 m-2">
-                                            Restaurant Name
-                                            <div class="bg-secondary shadow sm:rounded-lg">
-                                                <div class="block text-gray-700 bg-gray-50 px-4 py-2 sm:rounded-lg">{{Auth::user()->name}}</div>
-                                            </div>
-                                        </div>
-                                        <div class="flex-1 text-gray-700 bg-gray-100 px-4 py-2 m-2">
-                                            Branch ID
-                                            <div class="bg-secondary shadow sm:rounded-lg">
-                                                <div class="block text-gray-700 bg-gray-50 px-4 py-2 sm:rounded-lg">{{Auth::user()->id}}</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="flex bg-gray-100">
-                                        <div class="flex-1 text-gray-700 bg-gray-100 px-4 py-2 m-2">
-                                            Email Address
-                                            <div class="bg-secondary shadow sm:rounded-lg">
-                                                <div class="block text-gray-700 bg-gray-50 px-4 py-2 sm:rounded-lg">{{Auth::user()->email}}</div>
-                                            </div>
-                                        </div>
-                                        <div class="flex-1 text-gray-700 bg-gray-100 px-4 py-2 m-2">
-                                            Contact number
-                                            <div class="bg-secondary shadow sm:rounded-lg">
-                                                <div class="block text-gray-700 bg-gray-50 px-4 py-2 sm:rounded-lg">{{Auth::user()->phone_number}}</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="grid grid-cols-1 divide-y">
-                                        <div class="py-4"></div>
-                                        <div class="py-4"></div>
-                                    </div>
-                                    <div class="text-gray-400 text-left">
-                                        Location Information
-                                    </div>
-                                    <div class="flex bg-gray-100">
-                                        <div class="flex-1 text-gray-700 bg-gray-100 px-4 py-2 m-2">
-                                            Address
-                                            <div class="bg-secondary shadow sm:rounded-lg">
-                                                <div class="block text-gray-700 bg-gray-50 px-4 py-2 sm:rounded-lg">{{Auth::user()->location}}</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="flex bg-gray-100">
-                                        <div class="flex-1 text-gray-700 bg-gray-100 px-4 py-2 m-2">
-                                            City
-                                            <div class="bg-secondary shadow sm:rounded-lg">
-                                                <div class="block text-gray-700 bg-gray-50 px-4 py-2 sm:rounded-lg">{{Auth::user()->city}}</div>
-                                            </div>
-                                        </div>
-                                        <div class="flex-1 text-gray-700 bg-gray-100 px-4 py-2 m-2">
-                                            State
-                                            <div class="bg-secondary shadow sm:rounded-lg">
-                                                <div class="block text-gray-700 bg-gray-50 px-4 py-2 sm:rounded-lg">{{Auth::user()->state}}</div>
-                                            </div>
-                                        </div>
-                                        <div class="flex-1 text-gray-700 bg-gray-100 px-4 py-2 m-2">
-                                            Postal Code
-                                            <div class="bg-secondary shadow sm:rounded-lg">
-                                                <div class="block text-gray-700 bg-gray-50 px-4 py-2 sm:rounded-lg">{{Auth::user()->postcode}}</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="grid grid-cols-1 divide-y">
-                                        <div class="py-4"></div>
-                                        <div class="py-4"></div>
-                                    </div>
-                                    <div class="text-gray-400 text-left">
-                                        About Me
-                                    </div>
-                                    <div class="flex-1 text-gray-700 bg-gray-100 px-4 py-2 m-2">
-                                        Opening Hours
-                                        <div class="bg-secondary shadow sm:rounded-lg">
-                                            <div class="block text-gray-700 bg-gray-50 px-4 py-2 sm:rounded-lg">{{Auth::user()->opening}} - {{Auth::user()->closing}}</div>
-                                        </div>
-                                    </div>
-                                    <div class="flex bg-gray-100">
-                                        <div class="flex-1 text-gray-700 bg-gray-100 px-4 py-2 m-2">
-                                            Description
-                                            <div class="bg-secondary shadow sm:rounded-lg">
-                                                <div class="block h-24 text-gray-700 bg-gray-50 px-4 py-2 sm:rounded-lg">{{Auth::user()->description}}</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="flex bg-gray-100">
-                                        <div class="flex-1 text-gray-700 bg-gray-100 px-4 py-2 m-2">
-                                            Menu
-                                            <div class="mb-3 w-96">
-                                                {{Auth::user()->menu}}
-                                            </div>
-                                            <!-- Custom scripts -->
-                                            <script type="text/javascript">
-                                                const checkbox = document.getElementById("flexCheckIndeterminate");
-                                                checkbox.indeterminate = true;
-                                            </script>
-                                        </div>
-                                    </div>
+                    <!-- Page content -->
+                    <div class="bg-secondary shadow sm:rounded-lg">
+                        <div class="bg-gray-50 sm:rounded-lg">
+                            <div class="col-span-1 p-4 ">
+                                <div class="text-gray-800 text-lg text-left px-2">
+                                    My Account 
+                                    <a href="update/{{Auth::user()->id}}" class="text-left bg-transparent hover:bg-gray-500 text-gray-700 font-semibold text-[15px] hover:text-white py-1.5 px-2.5 border border-gray-500 hover:border-transparent rounded-full">Update</a>
                                 </div>
                             </div>
+                            <div class="col-span-1 p-4 bg-gray-100">
+                                <div class="text-gray-400 text-left">
+                                    User Information
+                                </div>
+                                <div class="flex bg-gray-100">
+                                    <div class="flex-1 text-gray-700 bg-gray-100 px-4 py-2 m-2">
+                                        Restaurant Name
+                                        <div class="bg-secondary shadow sm:rounded-lg">
+                                            <div class="block text-gray-700 bg-gray-50 px-4 py-2 sm:rounded-lg">
+                                                {{ Auth::user()->name }}</div>
+                                        </div>
+                                    </div>
+                                    <div class="flex-1 text-gray-700 bg-gray-100 px-4 py-2 m-2">
+                                        Restaurant ID
+                                        <div class="bg-secondary shadow sm:rounded-lg">
+                                            <div class="block text-gray-700 bg-gray-50 px-4 py-2 sm:rounded-lg">
+                                                {{ Auth::user()->id }}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex bg-gray-100">
+                                    <div class="flex-1 text-gray-700 bg-gray-100 px-4 py-2 m-2">
+                                        Email Address
+                                        <div class="bg-secondary shadow sm:rounded-lg">
+                                            <div class="block text-gray-700 bg-gray-50 px-4 py-2 sm:rounded-lg">
+                                                {{ Auth::user()->email }}</div>
+                                        </div>
+                                    </div>
+                                    <div class="flex-1 text-gray-700 bg-gray-100 px-4 py-2 m-2">
+                                        Contact number
+                                        <div class="bg-secondary shadow sm:rounded-lg">
+                                            <div class="block text-gray-700 bg-gray-50 px-4 py-2 sm:rounded-lg">
+                                                {{ Auth::user()->phone_number }}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-1 divide-y">
+                                    <div class="py-4"></div>
+                                    <div class="py-4"></div>
+                                </div>
+                                <div class="text-gray-400 text-left">
+                                    Restaurant Information
+                                </div>
+                                @foreach($user as $user)
+                                <div class="flex bg-gray-100">
+                                    <div class="flex-1 text-gray-700 bg-gray-100 px-4 py-2 m-2">
+                                        Address
+                                        <div class="bg-secondary shadow sm:rounded-lg">
+                                            <div class="block text-gray-700 bg-gray-50 px-4 py-2 sm:rounded-lg">
+                                                @if ($user == null)
+                                                    <i>Please Update</i>
+                                                @else
+                                                    {{ $user->address }}
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex bg-gray-100">
+                                    <div class="flex-1 text-gray-700 bg-gray-100 px-4 py-2 m-2">
+                                        Description
+                                        <div class="bg-secondary shadow sm:rounded-lg">
+                                            <div class="block text-gray-700 bg-gray-50 px-4 py-2 sm:rounded-lg">
+                                                @if ($user == null)
+                                                    <i>Please Update</i>
+                                                @else
+                                                    {{ $user->description }}
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-gray-400">
+                                    Table Management
+                                </div>
+                                <div class="flex bg-gray-100">
+                                    <div class="flex-1 text-gray-700 bg-gray-100 px-4 py-2 m-2">
+                                        Table for 2
+                                        <div class="bg-secondary shadow sm:rounded-lg">
+                                            <div class="block text-gray-700 bg-gray-50 px-4 py-2 sm:rounded-lg">
+                                                @if ($user == null)
+                                                    <i>Please Update</i>
+                                                @else
+                                                    {{ $user->i2 }}
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex-1 text-gray-700 bg-gray-100 px-4 py-2 m-2">
+                                        Table for 4
+                                        <div class="bg-secondary shadow sm:rounded-lg">
+                                            <div class="block text-gray-700 bg-gray-50 px-4 py-2 sm:rounded-lg">
+                                                @if ($user == null)
+                                                    <i>Please Update</i>
+                                                @else
+                                                    {{ $user->i4 }}
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex-1 text-gray-700 bg-gray-100 px-4 py-2 m-2">
+                                        Table for 8
+                                        <div class="bg-secondary shadow sm:rounded-lg">
+                                            <div class="block text-gray-700 bg-gray-50 px-4 py-2 sm:rounded-lg">
+                                                @if ($user == null)
+                                                    <i>Please Update</i>
+                                                @else
+                                                    {{ $user->i8 }}
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex bg-gray-100">
+                                    <div class="flex-1 text-gray-700 bg-gray-100 px-4 py-2 m-2">
+                                        Avg Time for 2 pax
+                                        <div class="bg-secondary shadow sm:rounded-lg">
+                                            <div class="block text-gray-700 bg-gray-50 px-4 py-2 sm:rounded-lg">
+                                                @if ($user == null)
+                                                    <i>Please Update</i>
+                                                @else
+                                                    {{ $user->time2 }} minutes
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex-1 text-gray-700 bg-gray-100 px-4 py-2 m-2">
+                                        Avg Time for 4 pax
+                                        <div class="bg-secondary shadow sm:rounded-lg">
+                                            <div class="block text-gray-700 bg-gray-50 px-4 py-2 sm:rounded-lg">
+                                                @if ($user == null)
+                                                    <i>Please Update</i>
+                                                @else
+                                                    {{ $user->time4 }} minutes
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex-1 text-gray-700 bg-gray-100 px-4 py-2 m-2">
+                                        Avg Time for 8 pax
+                                        <div class="bg-secondary shadow sm:rounded-lg">
+                                            <div class="block text-gray-700 bg-gray-50 px-4 py-2 sm:rounded-lg">
+                                                @if ($user == null)
+                                                    <i>Please Update</i>
+                                                @else
+                                                    {{ $user->time8 }} minutes
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                @endforeach
+                            </div>
                         </div>
-                    {{-- </div> --}}
+                    </div>
                 </div>
             </div>
         </div>

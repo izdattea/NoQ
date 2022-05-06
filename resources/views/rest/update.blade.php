@@ -13,114 +13,108 @@
                         <!-- Page content -->
                         <div class="bg-secondary shadow sm:rounded-lg">
                             <div class="bg-gray-50 sm:rounded-lg">
-                                <div class = "col-span-1 p-4 ">
-                                    <div class="text-gray-800 text-lg text-left px-2">
-                                        My Account
+                                <form action='/save' method='post'>
+                                    @csrf
+                                    <div class = "col-span-1 p-4 ">
+                                        <div class="text-gray-800 text-lg text-left px-2">
+                                            My Account 
+                                        </div>
                                     </div>
-
-                                </div>
-                                <div class = "col-span-1 p-4 bg-gray-100">
-                                    <div class="text-gray-400 text-left">
-                                        User Information
-                                    </div>
-                                    <div class="flex bg-gray-100">
-                                        <div class="flex-1 text-gray-700 bg-gray-100 px-4 py-2 m-2">
-                                            Restaurant Name
-                                            <div class="bg-secondary shadow sm:rounded-lg">
-                                                <div class="block text-gray-700 bg-gray-50 px-4 py-2 sm:rounded-lg">{{Auth::user()->name}}</div>
+                                    <div class = "col-span-1 p-4 bg-gray-100">
+                                        <div class="text-gray-400 text-left">
+                                            User Information
+                                        </div>
+                                        <div class="flex bg-gray-100">
+                                            <div class="flex-1 text-gray-700 bg-gray-100 px-4 py-2 m-2">
+                                                {{-- @foreach ($user as $user) --}}
+                                                Restaurant Name
+                                                <input type='text' name='name' value='{{Auth::user()->name}}' class="text-gray-700 bg-gray-50 pl-4 pr-22 py-2 rounded-lg border-0 bg-secondary shadow sm:rounded-lg w-full cursor-not-allowed" disabled>
+                                            </div>
+                                            <div class="flex-1 text-gray-700 bg-gray-100 px-4 py-2 m-2">
+                                                Restaurant ID
+                                                <input type='text' name='id' value='{{Auth::user()->id}}' class="text-gray-700 bg-gray-50 pl-4 pr-22 py-2 rounded-lg border-0 bg-secondary shadow sm:rounded-lg w-full cursor-not-allowed" disabled>
                                             </div>
                                         </div>
-                                        <div class="flex-1 text-gray-700 bg-gray-100 px-4 py-2 m-2">
-                                            Branch ID
-                                            <div class="bg-secondary shadow sm:rounded-lg">
-                                                <div class="block text-gray-700 bg-gray-50 px-4 py-2 sm:rounded-lg">{{Auth::user()->id}}</div>
+                                        <div class="flex bg-gray-100">
+                                            <div class="flex-1 text-gray-700 bg-gray-100 px-4 py-2 m-2">
+                                                Email Address
+                                                <input type='text' name='email' value='{{Auth::user()->email}}' class="text-gray-700 bg-gray-50 pl-4 pr-22 py-2 rounded-lg border-0 bg-secondary shadow sm:rounded-lg w-full" >
+                                            </div>
+                                            <div class="flex-1 text-gray-700 bg-gray-100 px-4 py-2 m-2">
+                                                Contact number
+                                                <input type='text' name='phone_number' value='{{Auth::user()->phone_number}}' class="text-gray-700 bg-gray-50 pl-4 pr-22 py-2 rounded-lg border-0 bg-secondary shadow sm:rounded-lg w-full" >
+                                            </div>
+                                        </div>
+                                        <div class="grid grid-cols-1 divide-y">
+                                            <div class="py-4"></div>
+                                            <div class="py-4"></div>
+                                        </div>
+                                        <div class="text-gray-400 text-left">
+                                            Restaurant Information
+                                        </div>
+                                        <div class="flex bg-gray-100">
+                                            <div class="flex-1 text-gray-700 bg-gray-100 px-4 py-2 m-2">
+                                                Address
+                                                <input type='text' name='address' value='{{$user->address}}' class="text-gray-700 bg-gray-50 pl-4 pr-22 py-2 rounded-lg border-0 bg-secondary shadow sm:rounded-lg w-full">
+                                            </div>
+                                        </div>
+                                        <div class="flex bg-gray-100">
+                                            <div class="flex-1 text-gray-700 bg-gray-100 px-4 py-2 m-2">
+                                                Description
+                                                <input type='text' name='description' value='{{$user->description}}' class="text-gray-700 bg-gray-50 pl-4 pr-22 py-2 rounded-lg border-0 bg-secondary shadow sm:rounded-lg w-full">
+                                            </div>
+                                        </div>
+                                        <div class="grid grid-cols-1 divide-y">
+                                            <div class="py-4"></div>
+                                            <div class="py-4"></div>
+                                        </div>
+                                        <div class="text-gray-400">
+                                            Table Management
+                                        </div>
+                                        <div class="flex bg-gray-100">
+                                            <div class="flex-1 text-gray-700 bg-gray-100 px-4 py-2 m-2">
+                                                Table for 2
+                                                <input type='text' name='pax2' value='{{$user->i2}}' class="text-gray-700 bg-gray-50 pl-4 pr-22 py-2 rounded-lg border-0 bg-secondary shadow sm:rounded-lg w-full">
+                                            </div>
+                                            <div class="flex-1 text-gray-700 bg-gray-100 px-4 py-2 m-2">
+                                                Table for 4
+                                                <input type='text' name='pax4' value='{{$user->i4}}' class="text-gray-700 bg-gray-50 pl-4 pr-22 py-2 rounded-lg border-0 bg-secondary shadow sm:rounded-lg w-full">
+                                            </div>
+                                            <div class="flex-1 text-gray-700 bg-gray-100 px-4 py-2 m-2">
+                                                Table for 8
+                                                <input type='text' name='pax8' value='{{$user->i8}}' class="text-gray-700 bg-gray-50 pl-4 pr-22 py-2 rounded-lg border-0 bg-secondary shadow sm:rounded-lg w-full">
+                                            </div>
+                                        </div>
+                                        <div class="flex bg-gray-100">
+                                            <div class="flex-1 text-gray-700 bg-gray-100 px-4 py-2 m-2">
+                                                Avg Time for 2 pax
+                                                <input type='text' name='time2' value='{{$user->time2}}' class="text-gray-700 bg-gray-50 pl-4 pr-22 py-2 rounded-lg border-0 bg-secondary shadow sm:rounded-lg w-full">
+                                            </div>
+                                            <div class="flex-1 text-gray-700 bg-gray-100 px-4 py-2 m-2">
+                                                Avg Time for 4 pax
+                                                <input type='text' name='time4' value='{{$user->time4}}' class="text-gray-700 bg-gray-50 pl-4 pr-22 py-2 rounded-lg border-0 bg-secondary shadow sm:rounded-lg w-full">
+                                            </div>
+                                            <div class="flex-1 text-gray-700 bg-gray-100 px-4 py-2 m-2">
+                                                Avg Time for 8 pax
+                                                <input type='text' name='time8' value='{{$user->time8}}' class="text-gray-700 bg-gray-50 pl-4 pr-22 py-2 rounded-lg border-0 bg-secondary shadow sm:rounded-lg w-full">
+                                                {{-- @endforeach --}}
+                                            </div>
+                                        </div>
+                                        <div class="grid grid-cols-1 divide-y">
+                                            <div class="py-4"></div>
+                                            <div class="py-4"></div>
+                                        </div>
+                                        {{-- edit button to center --}}
+                                        <div class="flex bg-gray-100"> 
+                                            <div class="flex text-gray-700 bg-gray-100 px-4 py-2 m-2">
+                                                <button type='submit' class="flex bg-transparent hover:bg-gray-500 text-gray-700 font-semibold text-[15px] hover:text-white py-1 px-5 border border-gray-500 hover:border-transparent rounded-full">Save</button>
+                                            </div>
+                                            <div class="flex text-gray-700 bg-gray-100 px-4 py-2 m-2">
+                                                <button type="reset" class="flex bg-transparent hover:bg-gray-500 text-gray-700 font-semibold text-[15px] hover:text-white py-1 px-5 border border-gray-500 hover:border-transparent rounded-full" onclick="history.back()">Cancel</button>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="flex bg-gray-100">
-                                        <div class="flex-1 text-gray-700 bg-gray-100 px-4 py-2 m-2">
-                                            Email Address
-                                            <div class="bg-secondary shadow sm:rounded-lg">
-                                                <div class="block text-gray-700 bg-gray-50 px-4 py-2 sm:rounded-lg">{{Auth::user()->email}}</div>
-                                            </div>
-                                        </div>
-                                        <div class="flex-1 text-gray-700 bg-gray-100 px-4 py-2 m-2">
-                                            Contact number
-                                            <div class="bg-secondary shadow sm:rounded-lg">
-                                                <div class="block text-gray-700 bg-gray-50 px-4 py-2 sm:rounded-lg">{{Auth::user()->phone_number}}</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="grid grid-cols-1 divide-y">
-                                        <div class="py-4"></div>
-                                        <div class="py-4"></div>
-                                    </div>
-                                    <div class="text-gray-400 text-left">
-                                        Location Information
-                                    </div>
-                                    <div class="flex bg-gray-100">
-                                        <div class="flex-1 text-gray-700 bg-gray-100 px-4 py-2 m-2">
-                                            Address
-                                            <div class="bg-secondary shadow sm:rounded-lg">
-                                                <div class="block text-gray-700 bg-gray-50 px-4 py-2 sm:rounded-lg">{{Auth::user()->location}}</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="flex bg-gray-100">
-                                        <div class="flex-1 text-gray-700 bg-gray-100 px-4 py-2 m-2">
-                                            City
-                                            <div class="bg-secondary shadow sm:rounded-lg">
-                                                <div class="block text-gray-700 bg-gray-50 px-4 py-2 sm:rounded-lg">{{Auth::user()->city}}</div>
-                                            </div>
-                                        </div>
-                                        <div class="flex-1 text-gray-700 bg-gray-100 px-4 py-2 m-2">
-                                            State
-                                            <div class="bg-secondary shadow sm:rounded-lg">
-                                                <div class="block text-gray-700 bg-gray-50 px-4 py-2 sm:rounded-lg">{{Auth::user()->state}}</div>
-                                            </div>
-                                        </div>
-                                        <div class="flex-1 text-gray-700 bg-gray-100 px-4 py-2 m-2">
-                                            Postal Code
-                                            <div class="bg-secondary shadow sm:rounded-lg">
-                                                <div class="block text-gray-700 bg-gray-50 px-4 py-2 sm:rounded-lg">{{Auth::user()->postcode}}</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="grid grid-cols-1 divide-y">
-                                        <div class="py-4"></div>
-                                        <div class="py-4"></div>
-                                    </div>
-                                    <div class="text-gray-400 text-left">
-                                        About Me
-                                    </div>
-                                    <div class="flex-1 text-gray-700 bg-gray-100 px-4 py-2 m-2">
-                                        Opening Hours
-                                        <div class="bg-secondary shadow sm:rounded-lg">
-                                            <div class="block text-gray-700 bg-gray-50 px-4 py-2 sm:rounded-lg">{{Auth::user()->opening}} - {{Auth::user()->closing}}</div>
-                                        </div>
-                                    </div>
-                                    <div class="flex bg-gray-100">
-                                        <div class="flex-1 text-gray-700 bg-gray-100 px-4 py-2 m-2">
-                                            Description
-                                            <div class="bg-secondary shadow sm:rounded-lg">
-                                                <div class="block h-24 text-gray-700 bg-gray-50 px-4 py-2 sm:rounded-lg">{{Auth::user()->description}}</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="flex bg-gray-100">
-                                        <div class="flex-1 text-gray-700 bg-gray-100 px-4 py-2 m-2">
-                                            Menu
-                                            <div class="mb-3 w-96">
-                                                {{Auth::user()->menu}}
-                                            </div>
-                                            <!-- Custom scripts -->
-                                            <script type="text/javascript">
-                                                const checkbox = document.getElementById("flexCheckIndeterminate");
-                                                checkbox.indeterminate = true;
-                                            </script>
-                                        </div>
-                                    </div>
-                                </div>
+                                </form>
                             </div>
                         </div>
                     {{-- </div> --}}
