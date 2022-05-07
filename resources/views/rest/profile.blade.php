@@ -71,7 +71,7 @@
                                         Address
                                         <div class="bg-secondary shadow sm:rounded-lg">
                                             <div class="block text-gray-700 bg-gray-50 px-4 py-2 sm:rounded-lg">
-                                                @if ($user == null)
+                                                @if ($user->address == null)
                                                     <i>Please Update</i>
                                                 @else
                                                     {{ $user->address }}
@@ -85,7 +85,7 @@
                                         Description
                                         <div class="bg-secondary shadow sm:rounded-lg">
                                             <div class="block text-gray-700 bg-gray-50 px-4 py-2 sm:rounded-lg">
-                                                @if ($user == null)
+                                                @if ($user->description == null)
                                                     <i>Please Update</i>
                                                 @else
                                                     {{ $user->description }}
@@ -102,7 +102,7 @@
                                         Table for 2
                                         <div class="bg-secondary shadow sm:rounded-lg">
                                             <div class="block text-gray-700 bg-gray-50 px-4 py-2 sm:rounded-lg">
-                                                @if ($user == null)
+                                                @if ($user->i2 == null)
                                                     <i>Please Update</i>
                                                 @else
                                                     {{ $user->i2 }}
@@ -114,7 +114,7 @@
                                         Table for 4
                                         <div class="bg-secondary shadow sm:rounded-lg">
                                             <div class="block text-gray-700 bg-gray-50 px-4 py-2 sm:rounded-lg">
-                                                @if ($user == null)
+                                                @if ($user->i4 == null)
                                                     <i>Please Update</i>
                                                 @else
                                                     {{ $user->i4 }}
@@ -126,7 +126,7 @@
                                         Table for 8
                                         <div class="bg-secondary shadow sm:rounded-lg">
                                             <div class="block text-gray-700 bg-gray-50 px-4 py-2 sm:rounded-lg">
-                                                @if ($user == null)
+                                                @if ($user->i8 == null)
                                                     <i>Please Update</i>
                                                 @else
                                                     {{ $user->i8 }}
@@ -140,7 +140,7 @@
                                         Avg Time for 2 pax
                                         <div class="bg-secondary shadow sm:rounded-lg">
                                             <div class="block text-gray-700 bg-gray-50 px-4 py-2 sm:rounded-lg">
-                                                @if ($user == null)
+                                                @if ($user->time2 == null)
                                                     <i>Please Update</i>
                                                 @else
                                                     {{ $user->time2 }} minutes
@@ -152,7 +152,7 @@
                                         Avg Time for 4 pax
                                         <div class="bg-secondary shadow sm:rounded-lg">
                                             <div class="block text-gray-700 bg-gray-50 px-4 py-2 sm:rounded-lg">
-                                                @if ($user == null)
+                                                @if ($user->time4 == null)
                                                     <i>Please Update</i>
                                                 @else
                                                     {{ $user->time4 }} minutes
@@ -164,7 +164,7 @@
                                         Avg Time for 8 pax
                                         <div class="bg-secondary shadow sm:rounded-lg">
                                             <div class="block text-gray-700 bg-gray-50 px-4 py-2 sm:rounded-lg">
-                                                @if ($user == null)
+                                                @if ($user->time8 == null)
                                                     <i>Please Update</i>
                                                 @else
                                                     {{ $user->time8 }} minutes

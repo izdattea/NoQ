@@ -26,24 +26,6 @@
                                 <div class="text-gray-400 text-left">
                                     User Information
                                 </div>
-                                <div class="flex-1 text-gray-700 bg-gray-100 px-4 py-2 m-2">
-                                    QR Code
-                                    <div class="bg-secondary shadow sm:rounded-lg">
-                                        <div class="block text-gray-700 bg-gray-50 px-4 py-2 sm:rounded-lg">
-                                            <form action="{{$user->id}}/image" method="POST" enctype="multipart/form-data">
-                                                @csrf
-                                                <div class="flex justify-center">
-                                                    <div class="mb-3 w-96">
-                                                      <input class="form-control block w-full px-2 py-1 text-sm font-normal text-gray-700 bg-white bg-clip-padding border border-solid  border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" type="file" name="qr">
-                                                    </div>
-                                                </div>
-                                                <div class="flex justify-center">
-                                                    <button type="submit" class="text-left bg-transparent hover:bg-gray-500 text-gray-700 font-semibold text-[15px] hover:text-white py-1.5 px-2.5 border border-gray-500 hover:border-transparent rounded-full">Submit</button>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
                                 <div class="flex bg-gray-100">
                                     <div class="flex-1 text-gray-700 bg-gray-100 px-4 py-2 m-2">
                                         Restaurant Name

@@ -42,7 +42,11 @@ class AdminController extends Controller
 
     function delete($id)
     {
-        $user = UserModel::where('id', $id)->firstorfail()->delete();
+        $rest = UserModel::find($id);
+        $user = str_replace(array('[', ']', '"','"', ' '), '', $rest->name);
+        Schema::dropIfExists($user);
+        RestaurantModel::where('id', $id)->firstorfail()->delete();
+        UserModel::where('id', $id)->firstorfail()->delete();
         // $user->delete;
         return redirect('users');
     }
